@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>From Currency</th>
+    <th>To currency</th>
+  </tr>
+    <tr>
+        <td>
+            <input type="text" id="dauvao">
+        </td>
+        <td>
+            <select name="" id="luachon1">
+                <option value="a">vnd</option>
+                <option value="b">usd</option>
+            </select>
+        </td>
+        <td>
+            <select name="" id="luachon2">
+                <option value="a">vnd</option>
+                <option value="b">usd</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="convert()" >convert</button>
+        </td>
+    </tr>
+
+    <script>
+function convert() {
+    // láy dữ liệu ở ô input có id = dauvao(lưu số tiền người ta cần chuyển đổi)
+    let input=parseInt(document.getElementById("dauvao").value);
+
+    // lấy dữ liệu ở ô select có id là luachon1
+    let select1=(document.getElementById("luachon1").value);
+
+    // lấy dữ liệu ở ô select có id là luachon2
+    let select2=(document.getElementById("luachon2").value);
+
+
+    if (select1 === select2){
+        alert(input)
+    }
+    if (select1==="a" && select2==="b"){
+        alert(input/23000);
+    }
+    if (select1==="b" && select2==="a"){
+        alert(23000*input)
+    }
+}
+    </script>
+</table>
+</body>
+</html>
