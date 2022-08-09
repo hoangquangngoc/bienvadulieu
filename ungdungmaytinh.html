@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ungdungmaytinh</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Caculator</th><br>
+    </tr>
+
+    <tr>
+        <td><input type="text" placeholder="Nhap so 1"  id="number1"></td>
+        <td><input type="text" placeholder="nhap so 2"  id="number2"></td><br>
+    </tr>
+</table>
+<tr>
+
+    <button onclick="Add()"> Addition(+)</button>
+    <button onclick="Sub()"> Subtraction(-)</button>
+        <button onclick="multi()">Multiplication(X)</button>
+            <button onclick="div()">Division(/)</button><br>
+</tr>
+<tr>
+    <th><p id="result">Result Division :</p></th>
+
+</tr>
+
+
+<script>
+    function Add(){
+        let nhapso1 = document.getElementById('number1').value
+        let nhapso2 = document.getElementById('number2').value
+        let result = parseInt(nhapso1) + parseInt(nhapso2)
+        document.getElementById('result').innerHTML= "Result Division :"+result
+    }
+    function Sub(){
+        let nhapso1 = document.getElementById('number1').value
+        let nhapso2 = document.getElementById('number2').value
+        let result = parseInt(nhapso1) - parseInt(nhapso2)
+        document.getElementById('result').innerHTML=result
+    }
+    function multi() {
+        let nhapso1 = document.getElementById('number1').value
+        let nhapso2 = document.getElementById('number2').value
+        let result = parseInt(nhapso1) * parseInt(nhapso2)
+        document.getElementById('result').innerHTML = result
+    }
+    function div() {
+        let nhapso1 = document.getElementById('number1').value
+        let nhapso2 = document.getElementById('number2').value
+        let result = parseInt(nhapso1) / parseInt(nhapso2)
+        document.getElementById('result').innerHTML = result
+    }
+</script>
+</body>
+</html>
