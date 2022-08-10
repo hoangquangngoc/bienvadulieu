@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinhngay</title>
+</head>
+<body>
+<input type="number" min="1" max="12" id="month" placeholder="thang">
+<button onclick="Tinhsongay()">Tinh so ngay</button>
+<div id="result">ketqua</div>
+<script>
+    function Tinhsongay() {
+        let thang1 = "1";
+        let thang2 = "2";
+        let thang3 = "3";
+        let thang4 = "4";
+        let thang5 = "5";
+        let thang6 = "6";
+        let thang7 = "7";
+        let thang8 = "8";
+        let thang9 = "9";
+        let thang10 = "10";
+        let thang11 = "11";
+        let thang12 = "12";
+        let month = document.getElementById("month").value;
+        if (month == thang4 || month == thang6 || month == thang9 || month == thang11) {
+            document.getElementById("result").innerHTML = "thang" + month + "co 30 ngay";
+        } else if (month == thang2) {
+            document.getElementById("result").innerHTML = "thang" + month + "co 28 , 29 ngay";
+        } else  {
+            document.getElementById("result").innerHTML = "thang" +month + "co 31 ngay";
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet">
+</head>
+<body>
+<table border="1px black salid">
+
+
+  <tr class="man-hinh">
+    <td colspan="4"  style="text-align: left">
+      <p id="bieu-thuc">Nơi nhập</p>
+      <p style="text-align: right" id="ket-qua">0</p>
+    </td>
+  </tr>
+
+  <tr class="hang-1">
+    <td onclick="nhan1Nut('1')"><button>1</button></td>
+    <td onclick="nhan1Nut('2')"><button>2</button></td>
+    <td onclick="nhan1Nut('3')"><button>3</button></td>
+    <td onclick="nhan1Nut('*')"><button>*</button></td>
+  </tr>
+
+  <tr class="hang-2">
+    <td onclick="nhan1Nut('4')"><button>4</button></td>
+    <td onclick="nhan1Nut('5')"><button>5</button></td>
+    <td onclick="nhan1Nut('6')"><button>6</button></td>
+    <td onclick="nhan1Nut('/')"><button>/</button></td>
+  </tr>
+
+  <tr class="hang-3">
+    <td onclick="nhan1Nut('7')"><button>7</button></td>
+    <td onclick="nhan1Nut('8')"><button>8</button></td>
+    <td onclick="nhan1Nut('9')"><button>9</button></td>
+    <td onclick="nhan1Nut('+')"><button>+</button></td>
+  </tr>
+
+  <tr class="hang-4">
+    <td onclick="nhan1Nut('AC')"><button>AC</button></td>
+    <td onclick="nhan1Nut('0')"><button>0</button></td>
+    <td onclick="nhan1Nut('-')"><button>-</button></td>
+    <td onclick="nhan1Nut('=')"><button>=</button></td>
+  </tr>
+</table>
+
+</body>
+</html>
+<script>
+  let soHienTai = "0"
+  let ketQua = 0
+  let phepTinh = "+"
+
+  function nhan1Nut(phimBam) {
+    if (parseInt(phimBam) == phimBam) {
+      soHienTai += phimBam
+      document.getElementById("bieu-thuc").innerHTML += phimBam
+    }
+    else
+    if (phimBam == "AC") {
+      reset()
+    }
+    else
+    if (phimBam == "=") {
+      tinhToan()
+      phepTinh = "="
+      document.getElementById("ket-qua").innerHTML = ketQua.toString()
+    }
+    else {
+      document.getElementById("bieu-thuc").innerHTML += phimBam
+      tinhToan()
+      phepTinh = phimBam
+    }
+  }
+
+  function reset() {
+    document.getElementById("bieu-thuc").innerHTML = " "
+    document.getElementById("ket-qua").innerHTML = "0"
+    soHienTai = "0"
+    ketQua = 0
+    phepTinh = "+"
+  }
+
+  function tinhToan() {
+    if (phepTinh === "+") {
+      ketQua += parseInt(soHienTai)
+    }
+    if (phepTinh == "-") {
+      ketQua -= parseFloat(soHienTai)
+    }
+    if (phepTinh == "*") {
+      ketQua *= parseFloat(soHienTai)
+    }
+    if (phepTinh == "/") {
+      ketQua /= parseFloat(soHienTai)
+    }
+    soHienTai = "0"
+  }
+</script>

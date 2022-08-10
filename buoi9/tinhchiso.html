@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinhchiso</title>
+</head>
+<body>
+<div class="container">
+  <h1>Tính chỉ số cân nặng</h1>
+  <label contenteditable="">Nhập cân nặng (kg)</label>
+  <input type="text" id="weight" placeholder="Your weight">
+  <br>
+  <br><label>Nhập chiều cao (m)</label>
+  <input type="text" id="height" placeholder="Your height">
+  <br>  <button type="submit" id="cal" >kiem tra</button>
+  <div id="result"></div>
+
+</div>
+
+
+
+
+
+<script>
+  let weight1  = document.getElementById('weight');
+  let height1= document.getElementById('height');
+  let cal = document.getElementById('cal');
+  function calculate(weight, height) {
+    if(weight <= 0 || height <= 0) {
+      alert('No Calculate');
+    }
+    height = height/100;
+    let bmi = weight/Math.pow(height,2);
+    return bmi;
+  }
+
+  cal.onclick = function result() {
+    let height = height1.value;
+    let weight = weight1.value;
+    let bmi = calculate(height, weight);
+
+    if (bmi < 18.5)
+      alert("Thiếu cân");
+    else if (bmi < 25.0 && bmi >= 18.5)
+      alert("Bình thường");
+    else if (bmi < 30.0 && bmi >= 25.0)
+      alert("Thừa cân");
+    else if (bmi >= 30.0)
+      alert("Béo phì");}
+</script>
+</body>
+</html>
