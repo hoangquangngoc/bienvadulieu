@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+  let a = prompt('nhap so')
+  let b = a.toString();
+  let str = b[0]
+  for(let i =1 ;i< b.length;i++){
+      if((b[i-1]%2 === 0)&&(b[i]%2 === 0)){
+          str = str + '-' + b[i]
+      }
+      else{
+          str = str + b[i]
+      }
+  }
+  alert(str)
+
+</script>
+</body>
+</html>
